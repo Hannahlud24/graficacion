@@ -1,22 +1,18 @@
 let fija = false;
 let posX, posY;
 let angulo = 0;
-let esNoche = false;
+let humo1=128;
+let humo2=118;
+let humo3=100;
+let humo4=86
 function setup() {
  createCanvas(600, 400);
 
 }
 
 function draw() {
-    if(esNoche){
-         background(10, 20, 60);
-    }else{
-         background(0, 191, 255);
-    }
+    background(0, 191, 255);
 
-    }
-
- 
  // Base
  stroke(139,69,19);
  fill(240, 230, 140);
@@ -45,7 +41,7 @@ line(276,140,325,140);
  fill(139, 69, 19);
  rect(280, 270, 40, 80);
 
- fill(0, 0, 0);
+ fill(0, 0, 0); //Ventanas
  stroke(255,255,255);
  fill(0,191,255);
  rect(220, 230, 15, 15);
@@ -140,12 +136,21 @@ noStroke();
 
  stroke(47,79,79)
  fill(105,105,105);  
- circle(357,128,18);
- circle(380,118,18);
- circle(359,100,18);
- circle(384,86,18);
+ circle(357,humo1,18); //humo de la chimenea
+ circle(380,humo2,18);
+ circle(359,humo3,18);
+ circle(384,humo4,18);
 
- 
+ humo1-=0.5;
+ humo2-=0.5;
+ humo3-=0.5;
+ humo4-=0.5;
+
+ if(humo1<0)humo1=130;
+ if(humo2<0)humo2=110;
+ if(humo3<0)humo3=90;
+ if(humo4<0)humo4=70;
+
  strokeWeight(2.5);
  stroke(34, 139, 34);
  line(26,349,26,337);
@@ -203,9 +208,6 @@ noStroke();
  rect(545, 358, 9, 10);
  ellipse(535.5, 368, 11, 7);
  ellipse(551, 366, 11, 7);
-
-  
-
 
  if (fija) {
   peppa(posX, posY, 0.8);
@@ -291,8 +293,6 @@ line(x + 8*s, y + 65*s, x + 8*s, y + 80*s);
   ellipse(x - 8*s, y + 85*s, 12*s, 6*s);
   ellipse(x + 8*s, y + 85*s, 12*s, 6*s);
 }
-
-
 
 
 function mousePressed() {
