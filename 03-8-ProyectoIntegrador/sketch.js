@@ -1,3 +1,8 @@
+let tierra;
+
+function preload() {
+  tierra = loadImage("texture_earth.jpg");
+}
 function setup() {
   createCanvas(500, 500, WEBGL);
 }
