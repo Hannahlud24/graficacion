@@ -127,7 +127,7 @@ function movePlayer (player){
 // TECLADO
 function keyPressed() { 
 
-    // 🔥 REINICIAR
+    // REINICIAR
     if ((gameOver || gameWon) && keyCode === 32){
         restartGame()
         return
